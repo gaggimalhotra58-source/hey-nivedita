@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>For Nivedita ❤️</title>
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  background: black;
+  color: white;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  text-align: center;
+  overflow: hidden;
+}
+
+#countdown {
+  font-size: 80px;
+  color: #ff4d6d;
+}
+
+#message {
+  display: none;
+  font-size: 35px;
+  margin-top: 20px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+button {
+  display: none;
+  padding: 12px 25px;
+  font-size: 18px;
+  background: #ff4d6d;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 25px;
+  margin-top: 20px;
+}
+
+button:hover {
+  background: #ff1e4d;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+.heart {
+  font-size: 60px;
+  animation: heartbeat 1s infinite;
+  margin-top: 20px;
+}
+
+@keyframes heartbeat {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+</style>
+</head>
+
+<body>
+
+<div id="countdown">3</div>
+
+<button onclick="showMessage()">Click Here ❤️</button>
+
+<div id="message">
+  You are beautiful Nivedita ❣️
+  <div class="heart">❤️</div>
+</div>
+
+<!-- Background Music -->
+<audio id="bgMusic" autoplay loop>
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+let count = 3;
+let countdownEl = document.getElementById("countdown");
+let button = document.querySelector("button");
+
+let timer = setInterval(function() {
+  count--;
+  countdownEl.innerHTML = count;
+  if(count === 0) {
+    clearInterval(timer);
+    countdownEl.style.display = "none";
+    button.style.display = "inline-block";
+  }
+}, 1000);
+
+function showMessage() {
+  document.getElementById("message").style.display = "block";
+  button.style.display = "none";
+}
+</script>
+
+</body>
+</html>
